@@ -1,0 +1,208 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="+aoy=k-t;lb@qE=ZzNA]" x="134" y="-308">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="dnuK9.u69__A!EwEd,Pw">
+        <field name="VAR">Durchmesser</field>
+        <value name="VALUE">
+          <block type="math_number" id="W@oHn4Mxkha)@Qjb)zJf">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="oxocard_clear_display" id="`ji~[7Ga9j/N]MCWw=3L">
+        <next>
+          <block type="oxocard_tone" id="q|v@P|@+,Fa!g+@|jXG8">
+            <value name="FREQUENCY">
+              <block type="math_arithmetic" id="IXwCn49?`)MChrdoIEDx">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <block type="math_arithmetic" id="_+kGhx0RW2lRfg1~!Qq3">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="QL+*(JRaRt7oX6Fy#g)z">
+                        <field name="VAR">Durchmesser</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="bf^zh?`FDl08KPkT_0(4">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="y}E{Rza6_v9m,0Qe?t[U">
+                    <field name="NUM">440</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="DURATION">
+              <block type="math_number" id=",TLY296Awg1HoTEhDa|)">
+                <field name="NUM">500</field>
+              </block>
+            </value>
+            <next>
+              <block type="oxocard_draw_circle" id="hl!Kz:j)M8S``c0|B;~P">
+                <value name="X">
+                  <block type="math_number" id="u#G.OH[U,N#n|):0aD@J">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+                <value name="Y">
+                  <block type="math_number" id="62tlhg!48-8A*P2y_J``">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+                <value name="R">
+                  <block type="variables_get" id="h2H6lm!o0D)9=Zkl@IhJ">
+                    <field name="VAR">Durchmesser</field>
+                  </block>
+                </value>
+                <value name="BRIGHTNESS">
+                  <block type="math_number" id="ohod[?|7{({dEVHI`?QQ">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delay" id="T+fI325X9D)n74-DFfSG">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="@;qSmcNI,S!@#]4%1Jcw">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="[E0avm?4FRBvZhvYf.lx">
+                        <value name="IF0">
+                          <block type="oxocard_button_ispressed" id="!XGZV1].zxL!LQq800|v">
+                            <field name="BUTTON">Left</field>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="math_change" id="acxRzkW[`GT-kl?l{66I">
+                            <field name="VAR">Durchmesser</field>
+                            <value name="DELTA">
+                              <block type="math_number" id="V-vzK[]Y-(4xN^@S,Wv:">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_if" id="_jOiUx!i8PvOvAST?(E(">
+                                <value name="IF0">
+                                  <block type="logic_compare" id="ZWVTz2JU/;NyW60XSyA]">
+                                    <field name="OP">GTE</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="a4axWJVw8q_9s6Gb5TRm">
+                                        <field name="VAR">Durchmesser</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="Xprb*,_x/x/WKg8.}tD|">
+                                        <field name="NUM">6</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="variables_set" id="`,pt-%Pa1czh[KlQ{AV!">
+                                    <field name="VAR">Durchmesser</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="Z3j:i8ss*S/|1d9+q0^e">
+                                        <field name="NUM">6</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="6[SgZKIi5uGSs,4oVMP.">
+                            <value name="IF0">
+                              <block type="oxocard_button_ispressed" id="M,#9G#Rp|W.`a,23c9`T">
+                                <field name="BUTTON">Right</field>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="math_decrement" id="G{Yp,wtyls5mJMd8`t2K">
+                                <field name="VAR">Durchmesser</field>
+                                <value name="DELTA">
+                                  <block type="math_number" id="iaT8}F+=F*;6fg8!Ga-%">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="controls_if" id="TAM32K_v82Mx/(aJ5ONf">
+                                    <value name="IF0">
+                                      <block type="logic_compare" id=")lKP}OM0~`{OZP6oAk?a">
+                                        <field name="OP">LTE</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="P9Au*Om%U]x-/p*cv)sb">
+                                            <field name="VAR">Durchmesser</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="~_@nmW]yKDx#s`F%F[Q+">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="variables_set" id="Hc(0%q{S5t#bl*.B]1x9">
+                                        <field name="VAR">Durchmesser</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="2oewS;K+D)/s,`ME:Z[R">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_if" id="8wepmdZ=QI_%pz-vHVud" x="137" y="88">
+    <statement name="DO0">
+      <block type="oxocard_tone_no_duration" id="8`vkIkmqPxl|JT]TsmmM">
+        <value name="FREQUENCY">
+          <block type="math_number" id="pDgk4Vk7QK!=8BfuEE4d">
+            <field name="NUM">220</field>
+          </block>
+        </value>
+        <next>
+          <block type="time_delay" id="{`m2`Ah%N#eGAgge=x#/">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="A*Qj)}AIRQI.sg-`u3EM">
+                <field name="NUM">500</field>
+              </block>
+            </value>
+            <next>
+              <block type="oxocard_no_tone" id="pP=v#Fd8t=v7Z+fHI^9p">
+                <next>
+                  <block type="oxocard_turn_off" id="lY:vvv~K0WXTwb-X!:Y~"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

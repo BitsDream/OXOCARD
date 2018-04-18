@@ -1,0 +1,152 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="*gqw)AmLw3?}[jK]FgO`" x="123" y="109">
+    <statement name="SETUP_FUNC">
+      <block type="oxocard_clear_display" id="_30NJ#.Qdt;_WB;4ruCH">
+        <next>
+          <block type="variables_set" id="M4R|;S~kmxeWAm;su]9+">
+            <field name="VAR">Zahl</field>
+            <value name="VALUE">
+              <block type="math_number" id=")guEG{fo*PPn*.cxrM3n">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="oxocard_draw_number" id="?h{//Ygf_rv^GW0AvhKP">
+        <value name="NUM">
+          <block type="variables_get" id="!MF!qQp7O6Lo(VR*#8xb">
+            <field name="VAR">Zahl</field>
+          </block>
+        </value>
+        <value name="BRIGHTNESS">
+          <block type="math_number" id="=P{q]yoI1r%`./H%K6ze">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+        <next>
+          <block type="time_delay" id="Hatw3eydviw|].)5a#Ov">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id=".j`ToTePqkt]8Rf.CmFI">
+                <field name="NUM">500</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id=")J2Qh_hU~OBdYy[+-=Ep">
+                <value name="IF0">
+                  <block type="oxocard_button_ispressed" id="f~m=e!0L+ICnOLDX|E2H">
+                    <field name="BUTTON">Left</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="math_decrement" id="]Eo1rtn@0}`RGIaJ#XgN">
+                    <field name="VAR">Zahl</field>
+                    <value name="DELTA">
+                      <block type="math_number" id=",;Wt6=#,oT,wVOGas?Wo">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="#176|.`sAG#=iNNk/e:T">
+                        <value name="IF0">
+                          <block type="logic_compare" id="rnjNqSV9?LjqX8]aiq)6">
+                            <field name="OP">LTE</field>
+                            <value name="A">
+                              <block type="variables_get" id="s%D1S!=7tQni)Jh`~mN=">
+                                <field name="VAR">Zahl</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="?^!j?]4#g-)Ac]d=md9f">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="variables_set" id="K8?@T3l66k;9sMSU_uIe">
+                            <field name="VAR">Zahl</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="{p9!;:7{AcxQnF^UP9qv">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="jQYf/LURU8/uk::5Cvmc">
+                    <value name="IF0">
+                      <block type="oxocard_button_ispressed" id="Q/s%zB_DB6K|VPNXy]G[">
+                        <field name="BUTTON">Right</field>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="math_change" id="?Sp#MS?^wX/kVsS[:s;P">
+                        <field name="VAR">Zahl</field>
+                        <value name="DELTA">
+                          <block type="math_number" id="Yb[9I%YmbIveL@}j=]o{">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="h?Ie_E9[.0|}~~=L.p0N">
+                            <value name="IF0">
+                              <block type="logic_compare" id="mA%/iX]5w79,vsYUA}k1">
+                                <field name="OP">GTE</field>
+                                <value name="A">
+                                  <block type="variables_get" id="t^ryWZ?l](Du273zj@ds">
+                                    <field name="VAR">Zahl</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="SK0N^aSkFyH{d2;#|}Y+">
+                                    <field name="NUM">99</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="variables_set" id="bj[:uK:#vJEW.5oY,3{y">
+                                <field name="VAR">Zahl</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="b^CtBDBix#p`TuDP^#,@">
+                                    <field name="NUM">99</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id="UIl!Q6HZm9Q}cdw]s|bz">
+                        <value name="IF0">
+                          <block type="oxocard_button_ispressed" id=".eX(K|mz+TfV|~*Feu)1">
+                            <field name="BUTTON">Middle</field>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="oxocard_turn_off" id="ki:#LM}~55XZZ6LN%(gX"></block>
+                        </statement>
+                        <next>
+                          <block type="oxocard_clear_display" id="6)Gn78XI{yq@G.#pgW{Z"></block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

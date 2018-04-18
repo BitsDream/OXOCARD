@@ -1,0 +1,53 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="*gqw)AmLw3?}[jK]FgO`" x="86" y="83">
+    <statement name="SETUP_FUNC">
+      <block type="oxocard_clear_display" id="_30NJ#.Qdt;_WB;4ruCH">
+        <next>
+          <block type="variables_set" id="xtQ=[Lf9;QxLNQM4e1Q.">
+            <field name="VAR">xPos</field>
+            <value name="VALUE">
+              <block type="math_number" id="`NeCiI0iD3**9X9hf@Ug">
+                <field name="NUM">4</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="Tq*1kh2OZs/QIba^u*@(">
+                <field name="VAR">yPos</field>
+                <value name="VALUE">
+                  <block type="math_number" id="yh`f*@+5#G:nrc}2xf:-">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="oxocard_draw_pixel" id="~@mn)CdUE_Vt-IU}kgfY">
+        <value name="X">
+          <block type="variables_get" id=".8BWeEY^qoML.0hAqm_j">
+            <field name="VAR">xPos</field>
+          </block>
+        </value>
+        <value name="Y">
+          <block type="variables_get" id="8{ThN5,Rs)LO{-+6oucD">
+            <field name="VAR">yPos</field>
+          </block>
+        </value>
+        <value name="BRIGHTNESS">
+          <block type="math_number" id="Zle-!+DIR=f#0!;kSa,)">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+        <next>
+          <block type="oxocard_turn_off" id="ki:#LM}~55XZZ6LN%(gX"></block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="oxocard_get_acceleration" id="rN--BNn~[LNae8oeb-)E" x="246" y="332">
+    <field name="AXIS">X</field>
+  </block>
+</xml>

@@ -1,0 +1,116 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="+aoy=k-t;lb@qE=ZzNA]" x="58" y="-345">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="dnuK9.u69__A!EwEd,Pw">
+        <field name="VAR">Durchmesser</field>
+        <value name="VALUE">
+          <block type="math_number" id="W@oHn4Mxkha)@Qjb)zJf">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="oxocard_clear_display" id="`ji~[7Ga9j/N]MCWw=3L">
+        <next>
+          <block type="oxocard_draw_circle" id="hl!Kz:j)M8S``c0|B;~P">
+            <value name="X">
+              <block type="math_number" id="u#G.OH[U,N#n|):0aD@J">
+                <field name="NUM">4</field>
+              </block>
+            </value>
+            <value name="Y">
+              <block type="math_number" id="62tlhg!48-8A*P2y_J``">
+                <field name="NUM">4</field>
+              </block>
+            </value>
+            <value name="R">
+              <block type="variables_get" id="h2H6lm!o0D)9=Zkl@IhJ">
+                <field name="VAR">Durchmesser</field>
+              </block>
+            </value>
+            <value name="BRIGHTNESS">
+              <block type="math_number" id="ohod[?|7{({dEVHI`?QQ">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_delay" id="T+fI325X9D)n74-DFfSG">
+                <value name="DELAY_TIME_MILI">
+                  <block type="math_number" id="@;qSmcNI,S!@#]4%1Jcw">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="math_change" id="j!!W+#o@I5q9Y7.,=;u1">
+                    <field name="VAR">Durchmesser</field>
+                    <value name="DELTA">
+                      <block type="math_number" id="K-Qb|8tE-F|azCC.BX%n">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="6c2ofIXIpwq_8:;bShs.">
+                        <value name="IF0">
+                          <block type="logic_compare" id="mVxsz]:V3/JnE{RbmfOC">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="Cqvu+)i=d:E5kYS}E{eE">
+                                <field name="VAR">Durchmesser</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="X,;:WVrCSD{n(F!SO!.e">
+                                <field name="NUM">6</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="variables_set" id="sEV]|Leux/EQerpqKCdA">
+                            <field name="VAR">Durchmesser</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="-_sZb+315lw`z=H{@9*:">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="DK]_O7ydy(){@~79`Lrh">
+                            <value name="IF0">
+                              <block type="oxocard_button_ispressed" id="AHpyuX-D|dP??A@.38Vf">
+                                <field name="BUTTON">Middle</field>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="oxocard_tone" id="HzFkvI](+PCb[JZPq/b;">
+                                <value name="FREQUENCY">
+                                  <block type="math_number" id="j#!bWSAC~5hLyQwt](S{">
+                                    <field name="NUM">440</field>
+                                  </block>
+                                </value>
+                                <value name="DURATION">
+                                  <block type="math_number" id="=[[wHc17qQV(*Q*xk%eS">
+                                    <field name="NUM">1000</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oxocard_turn_off" id="zc|5/^P6*aJcRh)U,]kH"></block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
